@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <reportName>Cucumber Extent Report</reportName>
+        <reportHeadline>Test Results</reportHeadline>
+        <theme>standard</theme>
+        <encoding>UTF-8</encoding>
+        <protocol>https</protocol>
+        <terminateOnError>false</terminateOnError>
+        <retryCount>0</retryCount>
+    </configuration>
+</extentreports>
