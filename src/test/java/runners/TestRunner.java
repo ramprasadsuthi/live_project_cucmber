@@ -1,4 +1,5 @@
 package runners;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -6,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
  
 @CucumberOptions(
-        		features ="src/test/resources/features/EDI834File.feature",
+        		features ="src/test/resources/features/test1.feature",
         		monochrome = true,		
         glue = {"StepDefinitions"},
         plugin = {
@@ -19,6 +20,7 @@ import io.cucumber.junit.CucumberOptions;
 )
 public class TestRunner {
 	
+
 	
     }
 

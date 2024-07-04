@@ -1,4 +1,4 @@
 $(document).ready(function() {
-CucumberHTML.timelineItems.pushArray([{"id":"51798c4a-36a1-4e6e-96a0-cd6d0db3e914","feature":"Validate EDI 834 segment values","scenario":"Validate BGN segment value in 834 file","start":1718801599203,"group":1,"content":"","tags":"","end":1718801599316,"className":"passed"}]);
+CucumberHTML.timelineItems.pushArray([{"id":"32ad1a16-8d85-4c07-af58-dd7bda3329d1","feature":"Sample Feature File","scenario":"TC-2 Logout Test","start":1720016929415,"group":1,"content":"","tags":"@regressiontest,","end":1720016933984,"className":"passed"},{"id":"11acf9c1-1e4a-4b9b-8342-92df97332a11","feature":"Sample Feature File","scenario":"TC-1 Login Test","start":1720016922100,"group":1,"content":"","tags":"@smoketest,","end":1720016929403,"className":"passed"}]);
 CucumberHTML.timelineGroups.pushArray([{"id":1,"content":"Thread[main,5,main]"}]);
 });

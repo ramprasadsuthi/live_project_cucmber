@@ -3,7 +3,7 @@
     <configuration>
         <reportName>Cucumber Extent Report</reportName>
         <reportHeadline>Test Results</reportHeadline>
-        <theme>standard</theme>
+        <theme>dark</theme>
         <encoding>UTF-8</encoding>
         <protocol>https</protocol>
         <terminateOnError>false</terminateOnError>
