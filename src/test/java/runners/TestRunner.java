@@ -8,7 +8,8 @@ import io.cucumber.junit.CucumberOptions;
  
 @CucumberOptions(
         		features ="src/test/resources/features/test1.feature",
-        		monochrome = true,		
+        		monochrome = true,	
+        		dryRun = false,
         glue = {"StepDefinitions"},
         plugin = {
                 "pretty",
@@ -16,7 +17,7 @@ import io.cucumber.junit.CucumberOptions;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "timeline:target/test-output-thread/"
-    }//,tags="@regression12"
+    },tags="@specialTest"
 )
 public class TestRunner {
 	

@@ -12,4 +12,14 @@ Feature: Sample Feature File
     When user enters username and password and click on the Login button
     Then validate the login page
     And Click on Logout Button and validate Logout is success
+    
+  @specialTest
+  Scenario: TC-3 Login Test
+    Given User launches the Application url
+    When user enters "<username>" and "<password>" and click on the Login button
+    Then validate the login page
+    
+   Examples:
+   | username | password |
+   | admin   |  master  |
 

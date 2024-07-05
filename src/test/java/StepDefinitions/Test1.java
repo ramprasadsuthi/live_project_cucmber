@@ -11,6 +11,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.junit.Assert;
+
 import pageObjects.LoginPage;
 
 public class Test1 {
@@ -47,16 +50,19 @@ public class Test1 {
 		 lp.clickOnLoginButton();
 	}
 	
+	@When("user enters {string} and {string} and click on the Login button")
+	public void user_enters_and_and_click_on_the_login_button(String username, String password) {
+		 System.out.println("User Enters User Name and Password and clicks on the Login");
+		 lp.enterUsername(username);
+		 lp.enterPassword(password);
+		 lp.clickOnLoginButton();
+	}
+	
 	@Then("validate the login page")
 	public void validate_the_login_page() {
-
 		WebElement pageTitle = driver.findElement(By.xpath("//span[@id='ewPageCaption']"));
 		String actualResult = pageTitle.getText();
-		if(actualResult.equals("Dashboard")) {
-		   System.out.println("Login successful.");
-		} else {
-		   System.out.println("Login Failed.");
-		}
+		Assert.assertEquals("Dashboard", actualResult);
 	}
 	
 	@Then("Click on Logout Button and validate Logout is success")
