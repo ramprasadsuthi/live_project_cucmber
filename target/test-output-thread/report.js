@@ -1,4 +1,4 @@
 $(document).ready(function() {
-CucumberHTML.timelineItems.pushArray([{"id":"b69a7417-1864-424b-a67e-413bff40a4bb","feature":"Sample Feature File","scenario":"TC-3 Login Test","start":1720189774382,"group":1,"content":"","tags":"@specialtest,","end":1720189780929,"className":"passed"}]);
+CucumberHTML.timelineItems.pushArray([{"id":"9b2101a0-0e70-47b6-b63d-d51c7be22a00","feature":"Sample Feature File","scenario":"TC-3 Login Test with DataDriven","start":1720487097269,"group":1,"content":"","tags":"@specialtest,","end":1720487103684,"className":"passed"},{"id":"838c20e2-9c22-4cda-8308-5d6cbb4c0fa9","feature":"Sample Feature File","scenario":"TC-4 Login Test with Excel","start":1720487103693,"group":1,"content":"","tags":"@exceldata,","end":1720487107747,"className":"passed"}]);
 CucumberHTML.timelineGroups.pushArray([{"id":1,"content":"Thread[main,5,main]"}]);
 });
