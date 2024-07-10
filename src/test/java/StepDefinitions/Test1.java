@@ -65,7 +65,7 @@ public class Test1 {
 		 System.out.println("User Enters User Name and Password and clicks on the Login");
 		 lp.enterUsername("admin");
 		 lp.enterPassword("master");
-		 lp.clickOnLoginButton();
+		 lp.clickLoginButton();
 	}
 	
 	@When("user enters {string} and {string} and click on the Login button")
@@ -73,7 +73,7 @@ public class Test1 {
 		 System.out.println("User Enters User Name and Password and clicks on the Login");
 		 lp.enterUsername(username);
 		 lp.enterPassword(password);
-		 lp.clickOnLoginButton();
+		 lp.clickLoginButton();
 	}
 	
 	@When("user enters username and password from excel and click on the Login button")
@@ -82,14 +82,18 @@ public class Test1 {
 		 // Iterate over the Excel data and invoke the scenario steps
 		 lp.enterUsername(username);
 		 lp.enterPassword(password);
-		 lp.clickOnLoginButton();
+		 lp.clickLoginButton();
 	}
 	
 	@Then("validate the login page")
 	public void validate_the_login_page() {
+	  try {
 		WebElement pageTitle = driver.findElement(By.xpath("//span[@id='ewPageCaption']"));
 		String actualResult = pageTitle.getText();
 		Assert.assertEquals("Dashboard", actualResult);
+	  } catch (AssertionError error) {
+		  throw error;
+	  }
 	}
 	
 	@Then("Click on Logout Button and validate Logout is success")

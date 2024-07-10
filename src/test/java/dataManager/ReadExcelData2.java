@@ -9,6 +9,7 @@ public class ReadExcelData2 {
 	private static List<Map<String, String>> excelData;
     static String username;
     static String password;
+    static String url;
 
 	public static void main(String[] args) throws IOException {
 		
@@ -19,8 +20,10 @@ public class ReadExcelData2 {
 		     for (Map<String, String> rowData : excelData) {
 		            username = rowData.get("username");
 		            password = rowData.get("password");
+		            url = rowData.get("url");
 		            System.out.println("Username : " + username);
 		            System.out.println("Password : " + password);
+		            System.out.println("Environment : " + url);
 		     }
 		
 

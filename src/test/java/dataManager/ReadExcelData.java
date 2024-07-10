@@ -17,7 +17,8 @@ public class ReadExcelData {
 		     String filePath = "TestData.xlsx";  // Replace with your actual file path
 		     String sheetName = "loginDetails";            // Replace with your actual sheet name
 		     excelData = reader.readExcelData(filePath, sheetName);
-		     System.out.println(excelData);
+		     
+		  //   System.out.println(excelData);
 		     
 		     excelData.forEach(map -> {
 		            map.forEach((key, value) -> System.out.println(key + " : " + value));
