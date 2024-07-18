@@ -51,7 +51,7 @@ public class Test1 {
 	
 	@After
 	public void tearDown() {
-		//driver.quit();
+		driver.quit();
 	}
 	
 	@Given("User launches the Application url")
@@ -78,11 +78,17 @@ public class Test1 {
 	
 	@When("user enters username and password from excel and click on the Login button")
 	public void login_with_excelData() {
+		
+	try {
 		 System.out.println("User Enters User Name and Password and clicks on the Login");
 		 // Iterate over the Excel data and invoke the scenario steps
 		 lp.enterUsername(username);
 		 lp.enterPassword(password);
 		 lp.clickLoginButton();
+	} catch (Exception error) {
+		throw error;
+	}
+	
 	}
 	
 	@Then("validate the login page")

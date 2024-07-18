@@ -17,7 +17,7 @@ import io.cucumber.junit.CucumberOptions;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "timeline:target/test-output-thread/"
-    },tags="@nonDataDrivenTest or @dataDrivenTest"
+    }//,tags="@nonDataDrivenTest or @dataDrivenTest"
 )
 public class TestRunner {
 	
