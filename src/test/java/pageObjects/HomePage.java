@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.DriverManager;
+
 public class HomePage {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -41,8 +43,9 @@ public class HomePage {
     private WebElement UOM;
 
     // Constructor initializes elements with PageFactory
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
+    public HomePage() {
+       // this.driver = driver;
+        this.driver = DriverManager.getDriver();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }

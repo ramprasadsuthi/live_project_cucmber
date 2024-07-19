@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.DriverManager;
 
 public class LoginPage {
     private WebDriver driver;
@@ -37,11 +38,16 @@ public class LoginPage {
     private WebElement forgotPasswordLink;
     
      // Constructor initializes elements with PageFactory
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
+    public LoginPage() {
+      //  this.driver = driver;
+    	this.driver = DriverManager.getDriver();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         PageFactory.initElements(driver, this);
+    }
+    
+    public void launchApp(String url) {
+    	driver.get(url);;
     }
 
     // Actions performed on the page elements

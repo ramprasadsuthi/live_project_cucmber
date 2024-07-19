@@ -1,44 +1,32 @@
-Feature: Login Functionality
+Feature: Sample Feature File
 
-@smokeTesting
-Scenario: TC1_ValidLogin
+  @nonDataDrivenTest, @smokeTest
+  Scenario: TC-1 Login Test
+    Given User launches the Application url
+    When user enters username and password and click on the Login button
+    Then validate the login page
+    
+  @nonDataDrivenTest
+  Scenario: TC-2 Logout Test
+    Given User launches the Application url
+    When user enters username and password and click on the Login button
+    Then validate the login page
+    And Click on Logout Button and validate Logout is success
+    
+  @dataDrivenTest
+  Scenario: TC-3 Login Test with DataDriven
+    Given User launches the Application url
+    When user enters "<username>" and "<password>" and click on the Login button
+    Then validate the login page
+    
+  Examples:
+  | username | password |
+  | admin    | master   |
+  
+  @dataDrivenTest
+  Scenario: TC-4 Login Test with Excel
+    Given User launches the Application url
+    When user enters username and password from excel and click on the Login button
+    Then validate the login page
+    
 
-	Given the user is on the login page for login
-	When they enter valid credentials "<username>" , "<password>"
-	And click the login button
-	Then they should be redirected to the home page
-	
-	Examples:
-		| username | password |
-		| admin    | master   |
-						
-
-Scenario: TC2_Logout
-
-	Given the user is on the login page for logout
-	When they enter valid credentials
-	And click the login button
-	Then they should be redirected to the home page
-	And click on logout and validate
-
-@smokeTesting	
-Scenario: TC3_Invalid Login
-
-	Given the user is on the login page for login
-	When they enter Invalid credentials
-	And click the login button
-	Then Validate the Invalid Login Error message
-
-@newTest
-Scenario: TC4_RESET
-
-	Given the user is on the login page for reset
-	When they enter valid credentials
-	And click the reset button
-	Then Validate username and password fields gets empty
-	
-Scenario: TC5_Forgot Password page is opened for user
-
-	Given the user is on the login page for forgot password
-	When click on the forgot password link
-	Then Validate forgot password page is displayed for the user

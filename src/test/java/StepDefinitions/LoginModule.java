@@ -18,24 +18,24 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pageObjects.HomePage;
 import pageObjects.LoginPage;
+import utils.DriverManager;
 
-public class Test1 {
+public class LoginModule {
 	
-	WebDriver driver;
+	//WebDriver driver;
 	LoginPage lp;
+	HomePage hp;
 	private List<Map<String, String>> excelData;
     String username;
     String password;
 	
 	@Before
 	public void setup(Scenario scenario) throws IOException {
-		 WebDriverManager.chromedriver().setup();
-
-		// System.setProperty("web.chrome.driver", "chromedriver.exe");
-	     driver = new ChromeDriver();
-	     driver.manage().window().maximize();
-	     lp = new LoginPage(driver);
+		
+	     lp = new LoginPage();
+	     hp = new HomePage();
 	     ExcelDataReader reader = new ExcelDataReader();
 	     String filePath = "TestData.xlsx";  // Replace with your actual file path
 	     String sheetName = "loginDetails";            // Replace with your actual sheet name
@@ -51,13 +51,13 @@ public class Test1 {
 	
 	@After
 	public void tearDown() {
-		driver.quit();
+		DriverManager.quitDriver();
 	}
 	
 	@Given("User launches the Application url")
 	public void user_launches_the_application() {
 	    System.out.println("User Launching the Application");
-	    driver.get("http://webapp.qedgetech.com/login.php");
+	    lp.launchApp("http://webapp.qedgetech.com/login.php");
 	}
 	
 	@When("user enters username and password and click on the Login button")
@@ -94,8 +94,7 @@ public class Test1 {
 	@Then("validate the login page")
 	public void validate_the_login_page() {
 	  try {
-		WebElement pageTitle = driver.findElement(By.xpath("//span[@id='ewPageCaption']"));
-		String actualResult = pageTitle.getText();
+		String actualResult = hp.getPageCaption();
 		Assert.assertEquals("Dashboard", actualResult);
 	  } catch (AssertionError error) {
 		  throw error;
